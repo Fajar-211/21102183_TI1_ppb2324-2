@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:saving_app/colors.dart';
 import 'package:saving_app/test_style.dart';
@@ -131,6 +133,81 @@ class HomePage extends StatelessWidget{
                 ],
               ),
             )
+            , Container(
+              margin: EdgeInsets.only(top: 200),
+              child: DraggableScrollableSheet(
+                builder: (context,ScrollController){
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: kWhite,
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(40),
+                      ),
+                      ),
+                      padding: const EdgeInsets.only(
+                        left: 30,
+                        right: 30,
+                        top: 21,
+                      ),
+                      child: Stack(
+                        children: [
+                          Container(
+                            child: SingleChildScrollView(
+                              controller: ScrollController,
+                              child: Column(
+                                children: [
+                                  Center(
+                                  child: Text(
+                                    'Transaction History',
+                                    style: kHeading6.copyWith(
+                                    color: kLuckyBlue,
+                                    fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                  _transactionList(
+                                    kTreeGreen.withOpacity(0.2), 
+                                    'assets/images1.jpeg', 
+                                    'succes', 
+                                    '19 Febuary, 03:25 PM', 
+                                    '+ 100.000'
+                                    ),
+                                  _transactionList(
+                                    kTreeGreen.withOpacity(0.2), 
+                                    'assets/images1.jpeg', 
+                                    'succes', 
+                                    '19 Febuary, 03:25 PM', 
+                                    '+ 150.000'
+                                  ),
+                                  _transactionList(
+                                    kTreeGreen.withOpacity(0.2), 
+                                    'assets/images1.jpeg', 
+                                    'succes', 
+                                    '19 Febuary, 03:25 PM', 
+                                    '- 110.000'
+                                  ),
+                                  _transactionList(
+                                    kTreeGreen.withOpacity(0.2), 
+                                    'assets/images1.jpeg', 
+                                    'succes', 
+                                    '19 Febuary, 03:25 PM', 
+                                    '- 130.000'
+                                  )
+                                  ],
+                              ),
+                            ),
+                          ),
+                          Container()
+                        ],
+                      ),
+                  );
+                }
+              
+              ),
+            )
           ],
         ),
       ),
@@ -163,3 +240,54 @@ class HomePage extends StatelessWidget{
     );
   }
 }
+
+
+
+  Widget _transactionList (
+    Color kBgColor, String icon, String title, String sub, String amount) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 30),
+      child: Row(
+        children: [
+          SizedBox(
+            height: 30,
+            width: 30,
+            child: CircleAvatar(
+              backgroundColor: kBgColor,
+              child: Image(
+                image: AssetImage(icon),
+                  width: 14,
+                  ),
+            ),
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Column(
+            crossAxisAlignment: 
+            CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: kBody1.copyWith(
+                  color: kLuckyBlue,),
+                ),
+                Text(
+                  sub,
+                  style: kCaption.copyWith(
+                    color: kLightGray,
+                  ),
+                )
+              ],
+          ),
+          Spacer(),
+          Text(
+            amount,
+            style: kBody1.copyWith(
+              color: kLuckyBlue,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
