@@ -13,7 +13,20 @@
           "package_name": "com.example.pertemuan9"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "550001479730-f1vhdj7arp48cuhrn2re8rlq4tv1lv53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pertemuan9",
+            "certificate_hash": "301dad1076c5b5dda59985f2a778cebe55cfe2dd"
+          }
+        },
+        {
+          "client_id": "550001479730-pn1bdhqekqvsijju3e4aiun6gpd2fnc9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCtyxDL-n-o3RAA1gPC6uUUfbuVe25Pt2g"
@@ -21,7 +34,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "550001479730-pn1bdhqekqvsijju3e4aiun6gpd2fnc9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "550001479730-ujo5bt06g17tp0aahea0eqcn98o7ncak.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pertemuan9"
+              }
+            }
+          ]
         }
       }
     }
